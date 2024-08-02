@@ -1,2 +1,9 @@
-# icpp-art.com
-Presentation website built for the ICPP art project. 
+```
+♥♥  ♥♥♥♥♥♥ ♥♥♥♥♥♥  ♥♥♥♥♥♥       ♥♥♥♥♥  ♥♥♥♥♥♥  ♥♥♥♥♥♥♥♥
+♥♥ ♥♥      ♥♥   ♥♥ ♥♥   ♥♥     ♥♥   ♥♥ ♥♥   ♥♥    ♥♥   
+♥♥ ♥♥      ♥♥♥♥♥♥  ♥♥♥♥♥♥      ♥♥♥♥♥♥♥ ♥♥♥♥♥♥     ♥♥    
+♥♥ ♥♥      ♥♥      ♥♥          ♥♥   ♥♥ ♥♥   ♥♥    ♥♥    
+♥♥  ♥♥♥♥♥♥ ♥♥      ♥♥          ♥♥   ♥♥ ♥♥   ♥♥    ♥♥    
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRESENTATION WEBSITE BUILT FOR THE ICPP ART PROJECT v1.0
+```

@@ -1,0 +1,282 @@
+/* Base styles */
+body, html {
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'lekton';
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'lekton';
+    src: url('/fonts/Lekton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lekton-bold';
+    src: url('/fonts/Lekton-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Container for slides */
+.slide-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles for each slide */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Header styling */
+header {
+    position: absolute; /* Ensure header is positioned relative to the viewport */
+    top: 0; /* Touch the top of the viewport */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Full width */
+    height: 8em; /* Height of the header */
+    margin-bottom: 10px; /* Small margin to separate from content */
+    background-color: #000000; /* Ensure header background color matches the body */
+}
+
+header h1 {
+    line-height: 1.5;
+    color: #ffffff;
+    font-size: 3em;
+    margin: 0;
+    text-align: center; /* Center text horizontally */
+}
+
+/* Content frame styles */
+.content {
+    position: relative;
+    width: 30vw; /* Reduced width for smaller content */
+    max-width: 60vh; /* Adjusted max width */
+    padding-top: 30vw; /* Adjusted padding for aspect ratio */
+    max-height: 60vh; /* Adjusted max height */
+    margin-top: 10px; /* Space below the header */
+}
+
+/* Framed image styles */
+.framed-image {
+    position: absolute;
+    top: 50%; /* Center the image vertically */
+    left: 50%; /* Center the image horizontally */
+    transform: translate(-50%, -50%); /* Adjust the image position to start from the middle */
+    width: 86.5%; /* Adjust the size of the framed image relative to the frame */
+    height: 86.5%; /* Maintain the same percentage as width for a square image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Frame styles */
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Navigation styling */
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.navigation button {
+    font-family: 'lekton';
+    background-color: #00000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.navigation button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Form styling */
+#imageForm {
+    padding: 0;
+}
+
+.form-group {
+    align-items: center; /* Align items vertically centered */
+}
+
+#imageForm label {
+    color: #ffffff;
+}
+
+#imageForm input[type="number"] {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-bottom: 5px dashed red;
+    font-family: 'lekton-bold';
+    font-size: 1em;
+    outline: none;
+    text-align: center;
+}
+
+#imageForm input[type="number"]::placeholder {
+    color: transparent;
+}
+
+#imageForm input[type="number"]:focus {
+    border-bottom: 5px dashed red;
+}
+
+/* Hide default spinner arrows in most browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Hide default spinner */
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Hide default spinner in Firefox */
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Remove default appearance */
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove default appearance */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        height: 4em;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .content {
+        width: 70vw; /* Increased width for better mobile view */
+        padding-top: 70vw; /* Adjust padding for aspect ratio */
+        max-width: 70vw; /* Cap width to viewport width */
+        max-height: 70vw; /* Cap height to viewport width */
+        margin-top: 10px; /* Space below the header */
+    }
+
+    .framed-image {
+        width: 90%; /* Increase width for better mobile view */
+        height: 90%; /* Increase height to match width */
+    }
+
+    .navigation {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .navigation button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .logo {
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .logo img {
+        width: 80px; /* Adjust logo size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 5em;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .content {
+        width: 80vw; /* Further increase width for very small screens */
+        padding-top: 80vw; /* Adjust padding for aspect ratio */
+        max-width: 80vw; /* Cap width to viewport width */
+        max-height: 80vw; /* Cap height to viewport width */
+        margin-top: 5px; /* Space below the header */
+    }
+
+    .framed-image {
+        width: 86.5%; /* Maintain width relative to the frame */
+        height: 86.5%; /* Maintain height relative to the frame */
+    }
+
+    .navigation {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .navigation button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .logo {
+        bottom: 5px;
+        left: 5px;
+    }
+
+    .logo img {
+        width: 60px; /* Further adjust logo size for very small screens */
+    }
+}
+
