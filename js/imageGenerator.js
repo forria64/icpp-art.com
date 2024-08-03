@@ -2,25 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('imageForm');
     const canvas = document.getElementById('imageCanvas');
     const ctx = canvas.getContext('2d');
+    const inputField = document.getElementById('artworkNumber');
+    const slides = document.querySelectorAll('.slide');
 
     // Resize canvas to match the framed image dimensions
-    // Increase canvas size for higher quality
-    canvas.width = canvas.parentElement.clientWidth * 1.5; // Adjust according to CSS
-    canvas.height = canvas.parentElement.clientHeight * 1.5; // Adjust according to CSS
-
-    // Set high-quality rendering settings
-    ctx.imageSmoothingEnabled = true; // Enable image smoothing for better quality
-    ctx.imageSmoothingQuality = 'high'; // Use high quality for image scaling
+    canvas.width = canvas.parentElement.clientWidth * 0.865; // Adjust according to CSS
+    canvas.height = canvas.parentElement.clientHeight * 0.865; // Adjust according to CSS
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const number = parseInt(document.getElementById('artworkNumber').value);
+        const number = parseInt(inputField.value);
         if (number < 1 || number > 2024) {
             alert('Number must be between 1 and 2024');
             return;
         }
         await generateImage(number);
     });
+
+    function setInputValueAndGenerateImage(number) {
+        inputField.value = number; // Set the input field to the provided number
+        generateImage(number); // Generate the image for the provided number
+    }
 
     async function generateImage(number) {
         // Clear the canvas
@@ -183,6 +185,25 @@ document.addEventListener('DOMContentLoaded', () => {
         tempCtx.putImageData(imageData, 0, 0);
 
         return tempCanvas;
+    }
+
+    function onSlideLoad(slideIndex) {
+        // Set the input value to "1" and generate the image
+        setInputValueAndGenerateImage(2024);
+    }
+
+    // Add event listeners for slide changes
+    slides.forEach((slide, index) => {
+        slide.addEventListener('transitionend', () => {
+            if (slide.classList.contains('active')) {
+                onSlideLoad(index);
+            }
+        });
+    });
+
+    // Initialize the first slide
+    if (slides.length > 0 && slides[0].classList.contains('active')) {
+        onSlideLoad(0);
     }
 });
 

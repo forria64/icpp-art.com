@@ -142,7 +142,7 @@ header h1 {
 
 /* Form styling */
 #imageForm {
-    padding: 0;
+    padding: 0px;
 }
 
 .form-group {
@@ -162,10 +162,6 @@ header h1 {
     font-size: 1em;
     outline: none;
     text-align: center;
-}
-
-#imageForm input[type="number"]::placeholder {
-    color: transparent;
 }
 
 #imageForm input[type="number"]:focus {
@@ -203,10 +199,6 @@ input[type="number"]::-webkit-outer-spin-button {
     left: 0;
     z-index: 1; /* Canvas is beneath the frame */
 }
-
-
-
-
 
 
 
