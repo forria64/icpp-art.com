@@ -4,8 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     // Resize canvas to match the framed image dimensions
-    canvas.width = canvas.parentElement.clientWidth * 0.865; // Adjust according to CSS
-    canvas.height = canvas.parentElement.clientHeight * 0.865; // Adjust according to CSS
+    // Increase canvas size for higher quality
+    canvas.width = canvas.parentElement.clientWidth * 1.5; // Adjust according to CSS
+    canvas.height = canvas.parentElement.clientHeight * 1.5; // Adjust according to CSS
+
+    // Set high-quality rendering settings
+    ctx.imageSmoothingEnabled = true; // Enable image smoothing for better quality
+    ctx.imageSmoothingQuality = 'high'; // Use high quality for image scaling
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
