@@ -36,14 +36,22 @@
         <div class="slide" id="slide3">
             <header>
                 <h1>
-                  <form id="imageForm">
-                      <label for="artworkNumber">Artwork number: #</label>
-                      <input type="number" id="artworkNumber" name="artworkNumber" min="1" max="2024" required>
-                  </form>
-                <div id="loadingMessage">Loading artwork...</div>
-                <div id="traitsTicker">
-                    <span id="traitsText" style="display: inline-block; animation: marquee 1500s linear infinite;"></span>
-                </div>
+                  <div class="navigation-arrows">
+                      <button id="leftArrow">&lt;</button>
+                      <div id="imageFormContainer">
+                          <form id="imageForm">
+                              <label for="artworkNumber">Artwork no. #</label>
+                              <input type="number" id="artworkNumber" name="artworkNumber" min="1" max="2024" value="1">
+                          </form>
+                      </div>
+                      <button id="rightArrow">&gt;</button>
+                  </div>
+
+
+                  <div id="loadingMessage">Loading artwork...</div>
+                  <div id="traitsTicker">
+                      <span id="traitsText" style="display: inline-block; animation: marquee 1500s linear infinite;"></span>
+                  </div>
                 </h1>
             </header>
             <div class="content">

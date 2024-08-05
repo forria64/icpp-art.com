@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingMessage = document.getElementById('loadingMessage');
     const traitsTicker = document.getElementById('traitsTicker');
     const traitsText = document.getElementById('traitsText');
+    const leftArrow = document.getElementById('leftArrow');
+    const rightArrow = document.getElementById('rightArrow');
 
     // Resize canvas to match the framed image dimensions
     canvas.width = canvas.parentElement.clientWidth * 0.865; // Adjust according to CSS
@@ -20,6 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         await generateImage(number);
+    });
+
+    leftArrow.addEventListener('click', () => {
+        let currentNumber = parseInt(inputField.value);
+        if (currentNumber > 1) {
+            setInputValueAndGenerateImage(currentNumber - 1);
+        }
+    });
+
+    rightArrow.addEventListener('click', () => {
+        let currentNumber = parseInt(inputField.value);
+        if (currentNumber < 2024) {
+            setInputValueAndGenerateImage(currentNumber + 1);
+        }
     });
 
     function setInputValueAndGenerateImage(number) {
@@ -84,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Right Eye: <span style="color:white">${metadata["Right Eye"]}</span> ||| 
                 Mouth: <span style="color:white">${metadata.Mouth}</span> ||| 
             `;
-            traitsText.innerHTML = traitsContent.repeat(100);
+            traitsText.innerHTML = traitsContent.repeat(100); // Repeat the content to ensure continuous scrolling
             traitsTicker.style.display = 'block';
 
             console.log("Traits ticker updated and displayed");
