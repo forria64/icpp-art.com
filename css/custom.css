@@ -202,14 +202,30 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @keyframes marquee {
     from {
-        transform: translateX(100%);
+        transform: translateX(0%);
     }
     to {
         transform: translateX(-100%);
     }
 }
 
+/* Loading message styling */
+#loadingMessage {
+    display: none;
+    color: white;
+    margin-top: 10px;
+}
 
+/* Traits ticker styling */
+#traitsTicker {
+    margin-top: 10px;
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    background-color: black;
+}
 
 
 

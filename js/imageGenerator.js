@@ -74,7 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Once the image is generated, hide the loading message and show the traits ticker
             loadingMessage.style.display = 'none';
-            traitsText.textContent = `Background: ${metadata.Background}, Scrap Overlay: ${metadata["Scrap Overlay"]}, Accent: ${metadata.Accent}, Left Eye: ${metadata["Left Eye"]}, Right Eye: ${metadata["Right Eye"]}, Mouth: ${metadata.Mouth}`;
+
+            // Create ticker content with white text for accent colors
+            const traitsContent = `
+                Background: <span style="color:${metadata.Background}">${metadata.Background}</span> ||| 
+                Scrap Overlay: <span style="color:${metadata["Scrap Overlay"]}">${metadata["Scrap Overlay"]}</span> ||| 
+                Accent: <span style="color:white">${metadata.Accent}</span> ||| 
+                Left Eye: <span style="color:white">${metadata["Left Eye"]}</span> ||| 
+                Right Eye: <span style="color:white">${metadata["Right Eye"]}</span> ||| 
+                Mouth: <span style="color:white">${metadata.Mouth}</span> ||| 
+            `;
+            traitsText.innerHTML = traitsContent.repeat(100);
             traitsTicker.style.display = 'block';
 
             console.log("Traits ticker updated and displayed");
