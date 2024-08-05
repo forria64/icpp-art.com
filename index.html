@@ -40,7 +40,10 @@
                       <label for="artworkNumber">Artwork number: #</label>
                       <input type="number" id="artworkNumber" name="artworkNumber" min="1" max="2024" required>
                   </form>
-                  <<< HERE GOES THE TICKER >>>
+                <div id="loadingMessage" style="display: none;">Loading artwork...</div>
+                <div id="traitsTicker" style="display: none; white-space: nowrap; overflow: hidden;">
+                    <span id="traitsText" style="display: inline-block; padding-left: 100%; animation: marquee 10s linear infinite;"></span>
+                </div>
                 </h1>
             </header>
             <div class="content">

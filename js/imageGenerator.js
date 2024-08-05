@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     const inputField = document.getElementById('artworkNumber');
     const slides = document.querySelectorAll('.slide');
+    const loadingMessage = document.getElementById('loadingMessage');
+    const traitsTicker = document.getElementById('traitsTicker');
+    const traitsText = document.getElementById('traitsText');
 
     // Resize canvas to match the framed image dimensions
     canvas.width = canvas.parentElement.clientWidth * 0.865; // Adjust according to CSS
@@ -25,14 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function generateImage(number) {
-        // Clear the canvas
+        // Show loading message and hide traits ticker
+        loadingMessage.style.display = 'block';
+        traitsTicker.style.display = 'none';
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        console.log("Loading artwork for number:", number);
 
         try {
             // Fetch metadata
             const response = await fetch(`/metadata/${number}.json`);
             if (!response.ok) throw new Error('Metadata not found');
             const metadata = await response.json();
+
+            console.log("Metadata fetched:", metadata);
 
             // Load all images in parallel
             const [
@@ -51,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadImage(`/assets/mouth-type/${metadata.Mouth.slice(1)}.png`)
             ]);
 
+            console.log("All images loaded successfully");
+
             // Apply color transformations and draw images on canvas
             ctx.drawImage(colorBackground(backgroundImage, metadata.Background), 0, 0, canvas.width, canvas.height);
             ctx.drawImage(colorBody(bodyImage, metadata["Scrap Overlay"], metadata.Accent), 0, 0, canvas.width, canvas.height);
@@ -59,9 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.drawImage(colorImage(rightEyeImage, metadata.Accent), 0, 0, canvas.width, canvas.height);
             ctx.drawImage(colorImage(mouthImage, metadata.Accent), 0, 0, canvas.width, canvas.height);
 
+            console.log("Image drawn on canvas");
+
+            // Once the image is generated, hide the loading message and show the traits ticker
+            loadingMessage.style.display = 'none';
+            traitsText.textContent = `Background: ${metadata.Background}, Scrap Overlay: ${metadata["Scrap Overlay"]}, Accent: ${metadata.Accent}, Left Eye: ${metadata["Left Eye"]}, Right Eye: ${metadata["Right Eye"]}, Mouth: ${metadata.Mouth}`;
+            traitsTicker.style.display = 'block';
+
+            console.log("Traits ticker updated and displayed");
+
         } catch (error) {
             console.error('Error generating image:', error);
             alert('An error occurred while generating the artwork. Please try again.');
+            loadingMessage.style.display = 'none'; // Hide loading message on error
         }
     }
 

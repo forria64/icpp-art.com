@@ -200,6 +200,14 @@ input[type="number"]::-webkit-outer-spin-button {
     z-index: 1; /* Canvas is beneath the frame */
 }
 
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
 
 
