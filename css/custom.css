@@ -1,7 +1,7 @@
 /* Base styles */
 body, html {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #011627;
+    color: #fdfffc;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -61,26 +61,44 @@ header {
     width: 100%; /* Full width */
     height: 8em; /* Height of the header */
     margin-bottom: 10px; /* Small margin to separate from content */
-    background-color: #000000; /* Ensure header background color matches the body */
+    background-color: #011627; /* Ensure header background color matches the body */
 }
 
 header h1 {
     line-height: 1.5;
-    color: #ffffff;
-    font-size: 3em;
+    color: #fdfffc;
+    font-size: 2.4em;
     margin: 0;
     text-align: center; /* Center text horizontally */
+}
+
+.description {
+padding-left: 32px;
+padding-right: 32px;
+margin-top: 24px;
+}
+
+/* Header content styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10 0px;
+    margin-top: 24px;
+    margin-left: 32px;
+    
 }
 
 /* Content frame styles */
 .content {
     position: relative;
-    width: 30vw; /* Reduced width for smaller content */
+    width: 30vw; /* Increased width for larger content */
     max-width: 60vh; /* Adjusted max width */
     padding-top: 30vw; /* Adjusted padding for aspect ratio */
     max-height: 60vh; /* Adjusted max height */
     margin-top: 10px; /* Space below the header */
 }
+
 
 /* Framed image styles */
 .framed-image {
@@ -117,15 +135,9 @@ header h1 {
     background-color: #00000000;
     color: white;
     border: none;
-    padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
-    margin: 5px;
     border-radius: 5px;
-}
-
-.navigation button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Logo styling */
@@ -138,10 +150,13 @@ header h1 {
 .logo img {
     width: 100px;
     height: auto;
+    margin-left: -10px;
+    margin-bottom: -20px;
 }
 
 /* Form styling */
 #imageForm {
+    white-space: nowrap;
     padding: 0px;
 }
 
@@ -150,14 +165,14 @@ header h1 {
 }
 
 #imageForm label {
-    color: #ffffff;
+    color: #fdfffc;
 }
 
 #imageForm input[type="number"] {
     background-color: transparent;
-    color: #ffffff;
+    color: #fdfffc;
     border: none;
-    border-bottom: 5px dashed red;
+    border-bottom: 3px dashed red;
     font-family: 'lekton-bold';
     font-size: 1em;
     outline: none;
@@ -165,7 +180,7 @@ header h1 {
 }
 
 #imageForm input[type="number"]:focus {
-    border-bottom: 5px dashed red;
+    border-bottom: 3px dashed red;
 }
 
 /* Hide default spinner arrows in most browsers */
@@ -213,18 +228,18 @@ input[type="number"]::-webkit-outer-spin-button {
 #loadingMessage {
     display: none;
     color: white;
-    margin-top: 10px;
+    margin-left: 0px;
 }
 
 /* Traits ticker styling */
 #traitsTicker {
-    margin-top: 10px;
+    margin-left: 0px;
     display: none;
-    width: 100%;
+    width: 76.5%;
     overflow: hidden;
     white-space: nowrap;
-    position: absolute;
-    background-color: black;
+    position: relative;
+    background-color: #011627;
 }
 
 /* Navigation arrows styling */
@@ -232,16 +247,15 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
 }
 
 #leftArrow,
 #rightArrow {
     font-family: 'lekton-bold';
-    background-color: #000;
-    font-size: 1em;
+    background-color: #00000000;
+    font-size: 5em;
     color: white;
-    border: 2px solid #000000;
+    border: 2px solid #011627;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
@@ -256,18 +270,8 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -276,7 +280,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     header h1 {
-        font-size: 2em;
+        font-size: 1em;
     }
 
     .content {
@@ -289,63 +293,33 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .navigation {
         bottom: 10px;
-        right: 10px;
+        right: 32px;
     }
 
     .navigation button {
-        padding: 8px 16px;
         font-size: 0.9em;
     }
 
     .logo {
-        bottom: 10px;
-        left: 10px;
     }
 
     .logo img {
         width: 80px; /* Adjust logo size for mobile */
     }
-}
 
-@media (max-width: 480px) {
-    header {
-        height: 5em;
+    .header-content {
+        flex-direction: row;
+        align-items: center;
     }
 
-    header h1 {
-        font-size: 1.5em;
+    #loadingMessage {
+        margin-left: 0;
     }
 
-    .content {
-        width: 80vw; /* Further increase width for very small screens */
-        padding-top: 80vw; /* Adjust padding for aspect ratio */
-        max-width: 80vw; /* Cap width to viewport width */
-        max-height: 80vw; /* Cap height to viewport width */
-        margin-top: 5px; /* Space below the header */
-    }
-
-    .framed-image {
-        width: 86.5%; /* Maintain width relative to the frame */
-        height: 86.5%; /* Maintain height relative to the frame */
-    }
-
-    .navigation {
-        bottom: 5px;
-        right: 5px;
-    }
-
-    .navigation button {
-        padding: 6px 12px;
-        font-size: 0.8em;
-    }
-
-    .logo {
-        bottom: 5px;
-        left: 5px;
-    }
-
-    .logo img {
-        width: 60px; /* Further adjust logo size for very small screens */
+    #traitsTicker {
+        margin-left: 0;
     }
 }
+
+
 

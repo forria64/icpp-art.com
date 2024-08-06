@@ -93,13 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Create ticker content with white text for accent colors
             const traitsContent = `
-                Background: <span style="color:${metadata.Background}">${metadata.Background}</span> ||| 
-                Scrap Overlay: <span style="color:${metadata["Scrap Overlay"]}">${metadata["Scrap Overlay"]}</span> ||| 
-                Accent: <span style="color:white">${metadata.Accent}</span> ||| 
-                Left Eye: <span style="color:white">${metadata["Left Eye"]}</span> ||| 
-                Right Eye: <span style="color:white">${metadata["Right Eye"]}</span> ||| 
-                Mouth: <span style="color:white">${metadata.Mouth}</span> ||| 
+                Background: <span style="color:${metadata.Background}">${metadata.Background}</span>, 
+                Acrylic Scrap: <span style="color:white">${metadata["Acrylic Scrap"]}</span>,
+                Scrap Overlay: <span style="color:${metadata["Scrap Overlay"]}">${metadata["Scrap Overlay"]}</span>, 
+                Accent: <span style="color:white">${metadata.Accent}</span>, 
+                Left Eye: <span style="color:white">${metadata["Left Eye"]}</span>, 
+                Right Eye: <span style="color:white">${metadata["Right Eye"]}</span>, 
+                Mouth: <span style="color:white">${metadata.Mouth}</span>, 
             `;
+
             traitsText.innerHTML = traitsContent.repeat(100); // Repeat the content to ensure continuous scrolling
             traitsTicker.style.display = 'block';
 
@@ -236,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function onSlideLoad(slideIndex) {
         // Set the input value to "1" and generate the image
-        setInputValueAndGenerateImage(2024);
+        setInputValueAndGenerateImage(1);
     }
 
     // Add event listeners for slide changes
