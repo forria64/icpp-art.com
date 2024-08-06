@@ -273,6 +273,34 @@ input[type="number"]::-webkit-outer-spin-button {
     
 }
 
+/* Container for the ticker text */
+.ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin-left: 32px;
+    width: calc(100% - 64px);
+}
+
+.ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; /* Start the ticker from the right edge */
+    animation: ticker 20s linear infinite; /* Adjust the duration as needed */
+}
+
+/* Ticker animation */
+@keyframes ticker {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     header {
