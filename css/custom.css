@@ -392,6 +392,53 @@ input[type="number"]::-webkit-outer-spin-button {
     position: relative;
     background-color: #001627;
 }
+
+@keyframes ticker1 {
+    0% {
+        transform: translateX(-18.5%);
+    }
+    32% {
+        transform: translateX(-18.5%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes ticker2 {
+    0% {
+        transform: translateX(-20.5%);
+    }
+    32% {
+        transform: translateX(-20.5%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#leftArrow,
+#rightArrow {
+    font-family: 'pixelfy';
+    background-color: #00000000;
+    font-size: 2.4em;
+    color: white;
+    border: 2px solid #001627;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10 0px;
+    margin-top: 24px;
+    margin-left: 25px;
+    
+}
+
 }
 
 
