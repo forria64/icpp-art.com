@@ -11,20 +11,6 @@ body, html {
 }
 
 @font-face {
-    font-family: 'lekton';
-    src: url('/fonts/Lekton-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'lekton-bold';
-    src: url('/fonts/Lekton-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'pixelfy';
     src: url('/fonts/pixelfy.ttf') format('truetype');
     font-weight: normal;
@@ -62,13 +48,13 @@ body, html {
 
 /* Header styling */
 header {
-    position: absolute; /* Ensure header is positioned relative to the viewport */
-    top: 0; /* Touch the top of the viewport */
-    left: 0; /* Align to the left edge */
-    width: 100%; /* Full width */
-    height: 8em; /* Height of the header */
-    margin-bottom: 10px; /* Small margin to separate from content */
-    background-color: #001627; /* Ensure header background color matches the body */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8em;
+    margin-bottom: 10px;
+    background-color: #001627;
 }
 
 header h1 {
@@ -76,13 +62,13 @@ header h1 {
     color: #fdfffc;
     font-size: 2.2em;
     margin: 0;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
 }
 
 .description {
-padding-left: 32px;
-padding-right: 32px;
-margin-top: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-top: 24px;
 }
 
 /* Header content styling */
@@ -90,32 +76,30 @@ margin-top: 24px;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10 0px;
-    margin-top: 24px;
+    padding: 10px 0;
+    margin-top: 17px;
     margin-left: 32px;
-    
 }
 
 /* Content frame styles */
 .content {
     position: relative;
-    width: 30vw; /* Increased width for larger content */
-    max-width: 60vh; /* Adjusted max width */
-    padding-top: 30vw; /* Adjusted padding for aspect ratio */
-    max-height: 60vh; /* Adjusted max height */
-    margin-top: 10px; /* Space below the header */
+    width: 30vw;
+    max-width: 60vh;
+    padding-top: 30vw;
+    max-height: 60vh;
+    margin-top: 10px;
 }
-
 
 /* Framed image styles */
 .framed-image {
     position: absolute;
-    top: 50%; /* Center the image vertically */
-    left: 50%; /* Center the image horizontally */
-    transform: translate(-50%, -50%); /* Adjust the image position to start from the middle */
-    width: 86.5%; /* Adjust the size of the framed image relative to the frame */
-    height: 86.5%; /* Maintain the same percentage as width for a square image */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 86.5%;
+    height: 86.5%;
+    object-fit: cover;
     z-index: 0;
 }
 
@@ -164,11 +148,11 @@ margin-top: 24px;
 /* Form styling */
 #imageForm {
     white-space: nowrap;
-    padding: 0px;
+    padding: 0;
 }
 
 .form-group {
-    align-items: center; /* Align items vertically centered */
+    align-items: center;
 }
 
 #imageForm label {
@@ -190,64 +174,47 @@ margin-top: 24px;
     border-bottom: 2px solid red;
 }
 
-/* Hide default spinner arrows in most browsers */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none; /* Hide default spinner */
+    -webkit-appearance: none;
     margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield; /* Hide default spinner in Firefox */
-}
-
-input[type="number"]::-webkit-outer-spin-button {
-    background: transparent;
-    border: none;
-    color: white;
-}
-
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none; /* Remove default appearance */
-}
-
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none; /* Remove default appearance */
+    -moz-appearance: textfield;
 }
 
 #artCanvas {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1; /* Canvas is beneath the frame */
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+    z-index: 1;
 }
 
 /* Loading message styling */
 #loadingMessage {
     display: none;
     color: white;
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 /* Traits ticker styling */
 #traitsTicker {
     margin-left: 0px;
     display: none;
-    width: calc(100% - 64px);
+    width: calc(100% - 442px);
     overflow: hidden;
     white-space: nowrap;
     position: relative;
     background-color: #001627;
 }
+
+#traitsText {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 1000s linear infinite;
+}
+
 
 /* Navigation arrows styling */
 .navigation-arrows {
@@ -277,7 +244,6 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 /* Container for the ticker text */
@@ -292,15 +258,15 @@ input[type="number"]::-webkit-outer-spin-button {
 .ticker-content1 {
     display: inline-block;
     white-space: nowrap;
-    padding-left: 100%; /* Start the ticker from the right edge */
-    animation: ticker1 10s linear infinite; /* Adjust the duration as needed */
+    padding-left: 100%;
+    animation: ticker1 10s linear infinite;
 }
 
 .ticker-content2 {
     display: inline-block;
     white-space: nowrap;
-    padding-left: 100%; /* Start the ticker from the right edge */
-    animation: ticker2 10s linear infinite; /* Adjust the duration as needed */
+    padding-left: 100%;
+    animation: ticker2 10s linear infinite;
 }
 
 /* Ticker animation */
@@ -328,8 +294,30 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
+@keyframes marquee {
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
+/* Link styles */
+.link-style1 {
+    color: #fca311;
+    text-decoration: none;
+}
 
+.link-style2 {
+    color: #90e0ef;
+    text-decoration: none;
+}
+
+.link-style3 {
+    color: #ff0000;
+    text-decoration: none;
+}
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -342,104 +330,39 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .content {
-        width: 70vw; /* Increased width for better mobile view */
-        padding-top: 70vw; /* Adjust padding for aspect ratio */
-        max-width: 70vw; /* Cap width to viewport width */
-        max-height: 70vw; /* Cap height to viewport width */
-        margin-top: 10px; /* Space below the header */
+        width: 70vw;
+        padding-top: 70vw;
+        max-width: 70vw;
+        max-height: 70vw;
+        margin-top: 10px;
     }
 
     .navigation {
-    margin-left: -12px;
-    margin-bottom: 0px;
+        margin-left: -12px;
+        margin-bottom: 0;
     }
 
-.navigation button {
-    font-family: 'pixelfy';
-    background-color: #00000000;
-    color: white;
-    border: none;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-    .logo {
+    .navigation button {
+        font-size: 1em;
     }
 
     .logo img {
-    width: 80px;
-    height: auto;
-    margin-left: -12px;
-    margin-bottom: -16px;
+        width: 80px;
+        margin-left: -12px;
+        margin-bottom: -16px;
     }
 
     .header-content {
-        flex-direction: row;
-        align-items: center;
+        margin-left: 25px;
     }
 
-    #loadingMessage {
-        margin-left: 0;
+    #traitsTicker {
+        width: calc(100% - 230px);
     }
 
-#traitsTicker {#011627
-    margin-left: 0px;
-    display: none;
-    width: calc(100% - 230px);
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    background-color: #001627;
-}
-
-@keyframes ticker1 {
-    0% {
-        transform: translateX(-18.5%);
-    }
-    32% {
-        transform: translateX(-18.5%);
-    }
-    100% {
-        transform: translateX(-100%);
+    #leftArrow,
+    #rightArrow {
+        font-size: 2.4em;
     }
 }
-
-@keyframes ticker2 {
-    0% {
-        transform: translateX(-20.5%);
-    }
-    32% {
-        transform: translateX(-20.5%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-#leftArrow,
-#rightArrow {
-    font-family: 'pixelfy';
-    background-color: #00000000;
-    font-size: 2.4em;
-    color: white;
-    border: 2px solid #001627;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10 0px;
-    margin-top: 24px;
-    margin-left: 25px;
-    
-}
-
-}
-
-
 
