@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/css/custom.css">
     <script src="/js/slides.js" defer></script>
     <script src="/js/imageGenerator.js" defer></script>
+    <script src="/js/imageSlider.js" defer></script>
 </head>
 <body>
     <div class="slide-container">
@@ -41,7 +42,7 @@
                 </h1>
             </header>
             <div class="content">
-                <img src="/images/scraps.gif" alt="scraps" class="framed-image">
+                <img class="image-slider" src="/images/scraps/1.png" alt="Image Slider" data-images="/images/scraps/1.png,/images/scraps/2.png,/images/scraps/3.png,/images/scraps/4.png,/images/scraps/5.png,/images/scraps/6.png,/images/scraps/7.png,/images/scraps/8.png,/images/scraps/9.png,/images/scraps/10.png,/images/scraps/11.png,/images/scraps/12.png,/images/scraps/13.png,/images/scraps/14.png,/images/scraps/15.png,/images/scraps/16.png,/images/scraps/17.png,/images/scraps/18.png,/images/scraps/19.png,/images/scraps/20.png,/images/scraps/21.png,/images/scraps/22.png,/images/scraps/23.png,/images/scraps/24.png,/images/scraps/25.png,/images/scraps/26.png,/images/scraps/27.jpg,/images/scraps/28.jpg,/images/scraps/29.jpg,/images/scraps/30.jpg,/images/scraps/31.jpg,/images/scraps/32.jpg,/images/scraps/33.jpg,/images/scraps/34.jpg,/images/scraps/35.jpg,/images/scraps/36.jpg,/images/scraps/37.jpg,/images/scraps/38.jpg,/images/scraps/39.jpg,/images/scraps/40.jpg,/images/scraps/41.jpg,/images/scraps/42.jpg,/images/scraps/43.jpg,/images/scraps/44.jpg,/images/scraps/45.jpg,/images/scraps/46.jpg,/images/scraps/47.jpg,/images/scraps/48.jpg,/images/scraps/49.jpg,/images/scraps/50.jpg,/images/scraps/51.jpg,/images/scraps/52.jpg">
                 <img src="/images/frame.png" alt="Frame" class="frame">
             </div>
         </div>
@@ -52,7 +53,7 @@
                     <div class="header-content">
                         <div id="imageFormContainer">
                             <form id="imageForm">
-                                <label for="artworkNumber">Artwork no.</label>
+                                <label for="artworkNumber">ICPP #</label>
                                 <input type="number" id="artworkNumber" name="artworkNumber" min="1" max="2024">
                             </form>:
                         </div>
@@ -79,8 +80,10 @@
         </div>
 
         <div class="logo">
-            <img src="/images/logo.png" alt="Logo">
-        </div>
+            <a href="https://docs.icpp.world/" target="_blank">
+		<img src="/images/logo.png" alt="Logo">
+            </a>
+	</div>
     </div>
 </body>
 </html>

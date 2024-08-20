@@ -60,7 +60,7 @@ header {
 header h1 {
     line-height: 1.5;
     color: #fdfffc;
-    font-size: 2.2em;
+    font-size: 1.6em;
     margin: 0;
     text-align: center;
 }
@@ -84,15 +84,24 @@ header h1 {
 /* Content frame styles */
 .content {
     position: relative;
-    width: 30vw;
-    max-width: 60vh;
-    padding-top: 30vw;
-    max-height: 60vh;
+    width: 29vw;
+    padding-top: 29vw;
     margin-top: 10px;
 }
 
 /* Framed image styles */
 .framed-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 86.5%;
+    height: 86.5%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.image-slider {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -126,7 +135,7 @@ header h1 {
     background-color: #00000000;
     color: white;
     border: none;
-    font-size: 2.2em;
+    font-size: 1.6em;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -139,7 +148,7 @@ header h1 {
 }
 
 .logo img {
-    width: 140px;
+    width: 105px;
     height: auto;
     margin-left: -10px;
     margin-bottom: -20px;
@@ -157,6 +166,7 @@ header h1 {
 
 #imageForm label {
     color: #fdfffc;
+    margin-right: -10px;
 }
 
 #imageForm input[type="number"] {
@@ -202,7 +212,7 @@ input[type="number"] {
 #traitsTicker {
     margin-left: 0px;
     display: none;
-    width: calc(100% - 442px);
+    width: calc(100% - 260px);
     overflow: hidden;
     white-space: nowrap;
     position: relative;
@@ -272,10 +282,7 @@ input[type="number"] {
 /* Ticker animation */
 @keyframes ticker1 {
     0% {
-        transform: translateX(-37%);
-    }
-    32% {
-        transform: translateX(-37%);
+        transform: translateX(0%);
     }
     100% {
         transform: translateX(-100%);
@@ -284,10 +291,7 @@ input[type="number"] {
 
 @keyframes ticker2 {
     0% {
-        transform: translateX(-40.3%);
-    }
-    32% {
-        transform: translateX(-40.3%);
+        transform: translateX(0%);
     }
     100% {
         transform: translateX(-100%);
@@ -296,7 +300,7 @@ input[type="number"] {
 
 @keyframes marquee {
     from {
-        transform: translateX(-20%);
+        transform: translateX(0%);
     }
     to {
         transform: translateX(-100%);
@@ -332,14 +336,12 @@ input[type="number"] {
     .content {
         width: 70vw;
         padding-top: 70vw;
-        max-width: 70vw;
-        max-height: 70vw;
         margin-top: 10px;
     }
 
     .navigation {
-        margin-left: -12px;
-        margin-bottom: 0;
+       margin-right: -21px;
+	margin-bottom: 0;
     }
 
     .navigation button {
@@ -348,21 +350,61 @@ input[type="number"] {
 
     .logo img {
         width: 80px;
-        margin-left: -12px;
+        margin-left: -22px;
         margin-bottom: -16px;
     }
 
     .header-content {
-        margin-left: 25px;
-    }
+        margin-left: 12px;
+        padding-top: 6px;
+	}
 
     #traitsTicker {
-        width: calc(100% - 230px);
+    width: calc(100% - 143px);
     }
+
+.ticker-container {
+    width: calc(100% - 32px);
+    margin-left: 15px;
+}
 
     #leftArrow,
     #rightArrow {
         font-size: 2.4em;
+	}
+
+#leftArrow:hover,
+#rightArrow:hover {
+    color: white;
+}
+
+@keyframes ticker1 {
+    0% {
+        transform: translateX(10%);
     }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes ticker2 {
+    0% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
 }
 
