@@ -17,6 +17,32 @@ body, html {
     font-style: normal;
 }
 
+/* Collect Button Styles */
+.collect-button-container {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.collect-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #edcb66;
+    color: #061420;
+    font-family: 'pixelfy';
+    font-size: 1.6em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.collect-button:hover {
+    transform: scale(1.1); /* Adds a slight size increase */
+}
+
+
 /* Container for slides */
 .slide-container {
     position: relative;
@@ -148,7 +174,7 @@ header h1 {
 }
 
 .logo img {
-    width: 105px;
+    width: 90px;
     height: auto;
     margin-left: -10px;
     margin-bottom: -20px;
@@ -325,6 +351,16 @@ input[type="number"] {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+
+.collect-button {
+    font-size: 1em;
+    padding: 6px 15px;
+    }
+    
+.collect-button-container {
+    bottom: 230px;
+}
+
     header {
         height: 4em;
     }
@@ -349,8 +385,8 @@ input[type="number"] {
     }
 
     .logo img {
-        width: 72px;
-        margin-left: -22px;
+        width: 64px;
+        margin-left: -18px;
         margin-bottom: -16px;
     }
 
